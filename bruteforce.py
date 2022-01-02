@@ -10,7 +10,7 @@ def check_string_double(string):
     count = 0
     temp = []
     for i in string:
-        if (i not in temp):
+        if i not in temp:
             count += 1
             temp.append(i)
     return count
