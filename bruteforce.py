@@ -23,7 +23,7 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', len):
 
 	if check_string_double(name) <= 2: # Max different chars in the domain
 		domainname = f"{name}.de"
-		
+
 		i+=1
 
 		url = "https://domaination.p.rapidapi.com/domains/"+domainname
