@@ -40,7 +40,7 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', len):
 
         rjson = response.json()
 
-        if rjson["domain"]["isAvailable"] == True:
+        if rjson["domain"]["isAvailable"] is True:
             print(f"{domainname}: available")
 
         remainder = i % 10
