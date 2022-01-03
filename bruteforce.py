@@ -2,8 +2,8 @@ import itertools
 import requests
 
 
-def foo(l, len):
-    yield from itertools.product(*([l] * len))
+def foo(chars, len):
+    yield from itertools.product(*([chars] * len))
 
 
 def check_string_double(string):
@@ -16,7 +16,7 @@ def check_string_double(string):
     return count
 
 
-I = 0
+COUNTER = 0
 
 LEN = 2  # Length of the bruteforced domain
 APIKEY = 'replace_this_with_your_api-key'  # Enter your own api key here
@@ -27,7 +27,7 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', LEN):
     if check_string_double(name) <= 2:  # Max different chars in the domain
         domainname = f"{name}.de"
 
-        I += 1
+        COUNTER += 1
 
         url = "https://domaination.p.rapidapi.com/domains/" + domainname
 
@@ -43,7 +43,7 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', LEN):
         if rjson["domain"]["isAvailable"] is True:
             print(f"{domainname}: available")
 
-        remainder = I % 10
+        remainder = COUNTER % 10
 
         is_divisible = remainder == 0
 
