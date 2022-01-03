@@ -48,4 +48,4 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', LEN):
         is_divisible = remainder == 0
 
         if is_divisible:
-            print(i)
+            print(COUNTER)
