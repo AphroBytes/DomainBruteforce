@@ -2,9 +2,9 @@ import itertools
 import requests
 
 
-def foo(chars, len):
+def foo(chars, length):
     """Returns all strings which consist of specific chars with a specific length"""
-    yield from itertools.product(*([chars] * len))
+    yield from itertools.product(*([chars] * length))
 
 
 def check_string_double(string):
