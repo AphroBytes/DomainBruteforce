@@ -16,23 +16,23 @@ def check_string_double(string):
     return count
 
 
-i = 0
+I = 0
 
-len = 2  # Length of the bruteforced domain
-api_key = 'replace_this_with_your_api-key'  # Enter your own api key here
+LEN = 2  # Length of the bruteforced domain
+APIKEY = 'replace_this_with_your_api-key'  # Enter your own api key here
 
-for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', len):
+for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', LEN):
     name = f"{''.join(x)}"
 
     if check_string_double(name) <= 2:  # Max different chars in the domain
         domainname = f"{name}.de"
 
-        i += 1
+        I += 1
 
         url = "https://domaination.p.rapidapi.com/domains/" + domainname
 
         headers = {
-            'x-rapidapi-key': api_key,
+            'x-rapidapi-key': APIKEY,
             'x-rapidapi-host': "domaination.p.rapidapi.com"
         }
 
@@ -43,7 +43,7 @@ for x in foo('abcdefghijklmnopqrstuvwxyz1234567890', len):
         if rjson["domain"]["isAvailable"] is True:
             print(f"{domainname}: available")
 
-        remainder = i % 10
+        remainder = I % 10
 
         is_divisible = remainder == 0
 
