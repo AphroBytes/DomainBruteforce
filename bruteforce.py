@@ -3,12 +3,12 @@ import requests
 
 
 def foo(chars, len):
-    '''Returns all strings which consist of specific chars with a specific length'''
+    """Returns all strings which consist of specific chars with a specific length"""
     yield from itertools.product(*([chars] * len))
 
 
 def check_string_double(string):
-    '''Return how many characters are doubled in a specific string.'''
+    """Return how many characters are doubled in a specific string"""
     count = 0
     temp = []
     for i in string:
